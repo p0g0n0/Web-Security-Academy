@@ -1,0 +1,34 @@
+Access Control - Lab 08 - User ID controlled by request parameter with unpredictable user IDs
+
+- Vulnerability type:
+    Horizontal privilege escalation vulnerability
+
+- Target Goal:
+    Find the GUID for 'carlos', get his API key and sutmit it as the solution
+
+- What's GUID?
+    Globally Unique Identifier - It's a 128-bit interger number used to identify resources.
+    It's generally used by developers working with Microsoft Technologies.
+    (note: everywhere else use UUID)
+
+- Credentials: 
+    user:       wiener
+    password:   peter
+
+- Steps to exploit it (Burp):
+    1. Add the lab's URL at the scope in Burp Suite 
+    2. Go to the lab's webpage and navigate through it
+    2. Log in as 'wiener'
+    3. (Back to Burp) At site map, get carlos' GUID at his post
+    3. Send the "/my-account" page to the repeater
+    4. Change the query parameter to carlos' GUID
+    5. Get carlos' API key
+    6. (Back to lab's website) Submit it and Rock the lab
+
+- Steps to exploit it (python):
+    1. Search which is and Get the GUID at the carlos' post
+    2. Get the CSRF Token
+    3. Log in as Wiener
+    4. Change the query parameter to carlos' GUID at '/my-account?id='
+    5. Get carlos' API Key
+    6. Submit it and Rock the lab

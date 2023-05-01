@@ -1,0 +1,19 @@
+Access Control - Lab 5 - URL-based access control can be circumvented
+
+ - Vulnerability Type:
+   Vertical privilege escalation using unauthorized HTML request header
+
+ - Target Goal:
+   1. Access admin panel
+   2. Delete carlos' user
+
+ - Credentials:
+      username: wiener
+      password: peter
+   
+ - Steps to exploit it (Burp):
+    1.
+    
+ - Steps to exploit it (Python):
+    1. Add 'X-original-url' to the headers
+    2. Send the user delete request with the prepared header

@@ -1,0 +1,22 @@
+Access Control - Lab 11 - Insecure direct object references
+
+ - Vulnerability Type:
+   IDOR in user chat logs.
+
+ - Target Goal:
+   1. Find carlos' password
+   2. Log in as carlos
+
+ - Credentials:
+   None
+
+ - Steps to exploit it (Burp):
+    1. Access the URL '/download-transcript/1.txt'
+    2. Get carlos' password
+    3. Log in as carlos and rock the lab
+
+ - Steps to exploit it (Python):
+    1. Get the response to the URL '/download-transcript/1.txt'
+    2. Regex to find the password
+    3. Get the CSRF
+    4. Log in as carlos and rock the lab

@@ -1,0 +1,32 @@
+Access Control - Lab 10 - User ID controlled by request parameter with password discolosure
+
+ - Vulnerability Type:
+    Horizontal to Vertical privilege escalation
+
+ - Target Goal:
+    1. Retrieve the administrator's password 
+    2. Delete carlos' user
+
+ - Credentials:
+    Username: wiener
+    Password: peter
+
+ - Steps to exploit it (Burp):
+    1. Add the lab's URL to the Scope in Burp Suite
+    2. (Back to lab's website) Log in as Wiener
+    3. Change the id query parameter to administrator
+    4. Go to Site Map in Burp Suite
+    5. At the response from administrator's my-account page
+        get administrator's password
+    6. (Back to lab's website)Log out as wiener
+        and log in as administrator
+    7. Delete carlos' user and rock the lab
+
+ - Steps to exploit it (Python):
+    1. Get CSRF Token
+    2. Log in as Wiener
+    3. Change the '/my-account/'s query parameter to administrator
+    4. Get the administrator's password
+    5. Log out as wiener
+    6. Log in as administrator
+    7. Delete carlos' user and rock the lab

@@ -1,0 +1,24 @@
+Access Control - Lab 07 - User ID controlled by request parameter
+
+- Vulnerability type:
+    Horizontal privilege escalation vulnerability
+
+- Target Goal:
+    Obtain the API key for the user 'carlos' and submit it as the solution
+
+- Credentials: 
+    user:       wiener
+    password:   peter
+
+- Steps to exploit:
+    1. Log in as 'wiener'
+    2. Change the request query parameter to 'carlos'
+    3. Get the Carlos' API Key
+    4. Submit it
+
+- Steps to exploit it (python):
+    1. Get the CSRF
+    2. Log in as 'wiener'
+    3. Change the query parameter to carlos at '/my-account?id='
+    4. Get the Carlos' API Key
+    5. Submit it in the lab

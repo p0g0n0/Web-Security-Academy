@@ -1,0 +1,22 @@
+Access Control - Lab 2 - Unprotected admin functionality with unpredictable URL
+
+ - Vulnerability Type:
+    Vertical privilege escalation through unprotected admin panel
+
+ - Target Goal:
+    - Find the admin-panel that has unpredictable url
+    - Delete the user 'carlos'
+
+ - Credentials:
+    None
+
+ - Steps to exploit it (Burp):
+    1. (Burp) Add the lab's URL to the scope
+    2. In Site map look the home page source
+    3. Search in the Javascript for the "/admin-<random>" URL
+    4. (Browser) Access the admin panel
+    6. Delete carlos' user
+
+ - Steps to exploit it (Python):
+    1. Search and retrieve the admin panel
+    2. Delete the carlos' user

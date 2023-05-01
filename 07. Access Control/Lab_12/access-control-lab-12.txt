@@ -1,0 +1,33 @@
+Access Control - Lab 12 - Multi-step process with no access control on one step 
+
+ - Vulnerability Type:
+   Vertical privilege escalation in a multi-step process webservice
+
+ - Target Goal:
+   - Using wiener's credentials 
+
+ - Credentials:
+   to familiarize with the admin panel
+      username: administrator
+      password: admin
+   
+   to achieve our goals
+      username: wiener
+      password: peter
+
+ - Steps to exploit it (Burp):
+    1. (Burp) Add the lab's URL at the scope
+    2. (Browser) Log in as administrator
+    3. (Browser) At the admin panel, upgrade carlos' user
+    4. (Burp) At the Site Map, send the /admin-roles request
+               to Intruder
+    5. (Browser) Log out of administrator's user account
+    6. (Browser) Log in as wiener
+    7. (Burp) At the Site Map, get the wiener's Session Token
+    8. (Burp) At the /admin-roles request, change the Session Token and
+               the body parameter to 'wiener'
+
+ - Steps to exploit it (Python):
+    1. Log in as wiener
+    2. Upgrade the wiener' user privileges
+        changing the /admin-roles request

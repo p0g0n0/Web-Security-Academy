@@ -1,0 +1,36 @@
+Access Control - Lab 13 - Referer-based access control
+
+ - Vulnerability Type:
+   Vertical privilege escalation using the Referer Header
+
+ - Target Goal:
+   Promote wiener's user to admin privilege
+
+ - Credentials:
+   to familiarize with the admin panel
+      username: administrator
+      password: admin
+   
+   to achieve our goals
+      username: wiener
+      password: peter
+
+ - Steps to exploit it (Burp):
+    1. (Burp) Add the lab's URL to the Scope
+    2. (Browser) Log in as administrator
+    3. (Browser) Access the admin-panel
+    4. (Browser) Promote carlos' user to admin
+    5. (Browser) Log out of administrator's user
+    6. (Browser) Log in as wiener's user
+    7. (Burp) In Site Map, send the request of carlos' promotion
+         to Repeter
+    8. (Burp) In Site Map, copy wiener's Session Cookie
+    9. (Burp) In Repeter, change the username query parameter to 'wiener'
+         and change the Session Cookie to the wiener's Session Cookie, then
+         send the request.
+
+ - Steps to exploit it (Python):
+    1. Log in as wiener
+    2. Prepare headers content adding 'Referer:lab's admin/admin'
+    3. Send a get request to promote wiener's user using the header prepared
+    4. You rocked it!

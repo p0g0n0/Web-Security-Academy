@@ -1,0 +1,18 @@
+Access Control - Lab 6 - Method-based access control can be circumvented
+
+ - Vulnerability Type:
+   Vertical privilege escalation
+
+ - Target Goal:
+   1. Promote the wiener's user to adminitrator
+
+ - Credentials:
+      username: wiener
+      passowrd: peter
+   
+ - Steps to exploit it (Burp):
+    1.
+  
+ - Steps to exploit it (Python):
+    1. Log in as wiener
+    2. Send a request to promote him to administrator
