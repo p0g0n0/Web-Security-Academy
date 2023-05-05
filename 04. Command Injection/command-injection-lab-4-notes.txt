@@ -1,0 +1,4 @@
+Command Injetion - Lab 4 - Blind OS command injection with out-of-band interaction
+
+Note: We can only solve this lab with BurpSuite Pro.
+So it's impossible for me to solve it. :p

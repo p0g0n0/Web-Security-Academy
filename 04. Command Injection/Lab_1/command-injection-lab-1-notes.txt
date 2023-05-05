@@ -1,0 +1,21 @@
+Command Injetion - Lab 1 - OS command injection, simple case
+
+ - Vulnerability Type:
+   Basic OS Command Injection
+
+ - Target Goal:
+   1. Execute 'whoami' command and determine the current user
+
+ - Credentials:
+      None
+
+ - Steps to exploit it (Burp):
+    1.(Burp) Add the lab's url to Scope
+    2.(Browser) See some product and check the stock
+    3.(Burp) Send the /product/stock to Repeter
+    4.(Burp) Add ';whoami' to the storeId body parameter and
+            Send it.
+
+ - Steps to exploit it (Python):
+    1. Prepare data with ';whoami' to 'storeId' parameter
+    2. Send a post request with data previously prepared

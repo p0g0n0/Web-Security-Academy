@@ -1,0 +1,34 @@
+Command Injetion - Lab 3 - Blind OS command injection with output redirection
+
+ - Vulnerability Type:
+   Blind OS Command Injection
+
+ - Target Goal:
+   1. Execute 'whoami' command
+   2. Retrieve the output
+
+ - Credentials:
+   None
+
+ - Steps to exploit it (Burp):
+    1.(Burp) Add the lab's url to the Scope
+    2.(Browser) Complete and send a feedback
+    3.(Burp) Send feedback's page to Repeater
+    4.(Burp) Change parameter's request to find
+            which one is vulnerable [& sleep 10 #]
+    5.(Burp) Send 'whoami' as command and redirect it
+            to a file at the /var/www/images/
+    6.(Burp) In SiteMap, change filters to allow images
+    7.(Browser) Go back to home page
+    8.(Burp) Send the image request to Repeater
+    9.(Burp) Change the filename parameter to request the
+            name of our file and send it.
+
+ - Steps to exploit it (Python):
+    1. Get CSRF Token
+    2. Check which field in the feedback form is vulnerable
+    3. Add the OS Command to the vulnerable field data
+    4. Send the request with the altered data
+    5. Prepare a query parameter with the name of the file containing the username
+    6. Send the get request with the prepared parameter
+    7. Retrieve the username

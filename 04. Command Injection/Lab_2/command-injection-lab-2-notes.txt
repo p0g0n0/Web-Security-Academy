@@ -1,0 +1,23 @@
+Command Injetion - Lab 2 - Blind OS command injection with time delays
+
+ - Vulnerability Type:
+   Blind OS Command Injection
+
+ - Target Goal:
+   1. Exploit the OS Command Injection in feedback function to
+      cause a 10 second delay (& ping -c 10 127.0.0.1 &)
+
+ - Credentials:
+   None
+
+ - Steps to exploit it (Burp):
+    1.(Burp) Add the lab's url to the Scope
+    2.(Browser) Go to feedback page
+    3.(Browser) Complete the form and send it
+    4.(Burp) Send the feedback request to Repeater
+    5.(Burp) Add Sleep 10 command at the end of the email
+            and send the request.
+
+ - Steps to exploit it (Python):
+    1. 
+    2.
